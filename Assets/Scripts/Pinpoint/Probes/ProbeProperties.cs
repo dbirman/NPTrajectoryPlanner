@@ -69,6 +69,7 @@ public class ProbeProperties
         Neuropixels21 = 21,
         Neuropixels24 = 24,
         Neuropixels24x2 = 28,
+        A4x16_Poly2_23s_200_177 = 64,
         UCLA128K = 128,
         UCLA256F = 256,
         Pipette25 = 25,
@@ -90,6 +91,8 @@ public class ProbeProperties
             case ProbeType.Neuropixels24:
                 return true;
             case ProbeType.Neuropixels24x2:
+                return true;
+            case ProbeType.A4x16_Poly2_23s_200_177:
                 return true;
             case ProbeType.Pipette25:
                 return false;

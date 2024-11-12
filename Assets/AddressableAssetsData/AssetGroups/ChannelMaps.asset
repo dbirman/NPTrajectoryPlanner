@@ -17,33 +17,38 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: edfc08336e8737945a5382729804fd5f
   m_SerializeEntries:
-  - m_GUID: 1f4318549ce21f444ac0391a33dae02d
+  - m_GUID: bebe313b7e7b8a34e9acbf6e3cd0c056
     m_Address: Assets/AddressableAssets/ChannelMaps/neuropixels_1.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 78d72a9495bb9de4db430c4a7124f679
+  - m_GUID: 5128556fad86e954eb77b48e83e88444
     m_Address: Assets/AddressableAssets/ChannelMaps/neuropixels_2.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d46a8f9052cb2f24193d9e7d659f8583
+  - m_GUID: 3e9fb8b351651c64db5e83d1d46c684b
     m_Address: Assets/AddressableAssets/ChannelMaps/neuropixels_2_1shank.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6c610f1cb26c1f44a98acd88b4bdd650
+  - m_GUID: 0426001ac64b7864cbc9a0793f4ab0cc
     m_Address: Assets/AddressableAssets/ChannelMaps/pipette.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 45640d4e5df0b3c419c6605dd1385a43
+  - m_GUID: f85fda9955f3da54c8875d68202b9b34
     m_Address: Assets/AddressableAssets/ChannelMaps/ucla_128k.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d9696f89f722d1240be4d4ec88b676a4
+  - m_GUID: 52853bc506be6164e9fe644526ab1020
     m_Address: Assets/AddressableAssets/ChannelMaps/ucla_256f.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e39b448f67fb1a94ea85bdf8b470cea0
+    m_Address: Assets/AddressableAssets/ChannelMaps/a4x16.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
