@@ -5,6 +5,7 @@ using System.Linq;
 using BrainAtlas;
 using EphysLink;
 using Pinpoint.Probes;
+using Pinpoint.Probes.ManipulatorBehaviorController;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;

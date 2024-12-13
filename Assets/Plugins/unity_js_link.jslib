@@ -5,6 +5,14 @@ mergeInto(LibraryManager.library, {
     console.log('copy2clipboard called: ' + str);
 	copy2clipboardStr = str;
 	canvas.addEventListener('click', copy2clipboardCallback, false);
+  },
+
+  SelectPID: function (pid) {
+    window.alert(UTF8ToString(pid));
+  },
+
+  DownloadFile: function(filename, filedata) {
+    downloadFile(filename, filedata);
   }
 
 });

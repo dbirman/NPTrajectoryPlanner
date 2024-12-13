@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="LeftSidePanel" src="project://database/Assets/UI/LeftSidePanel.uxml?fileID=9197481963319205126&amp;guid=9b006b017abd025498f784ebc48fff6f&amp;type=3#LeftSidePanel" />
+    <ui:Template name="RightSidePanel" src="project://database/Assets/UI/RightSidePanel.uxml?fileID=9197481963319205126&amp;guid=b9d668b1f1179fb4f93c0cc2fa1ccec9&amp;type=3#RightSidePanel" />
+    <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: row; justify-content: space-between;">
+        <ui:Instance template="LeftSidePanel" name="left-side-panel" picking-mode="Ignore" class="sidePanel" style="max-width: 35%;" />
+        <ui:Instance template="RightSidePanel" name="right-side-panel" picking-mode="Ignore" class="sidePanel" style="max-width: 25%;" />
+    </ui:VisualElement>
+</ui:UXML>

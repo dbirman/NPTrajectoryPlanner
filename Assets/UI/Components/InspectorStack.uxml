@@ -1,0 +1,56 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Styles/InspectorStyle.uss?fileID=7433441132597879392&amp;guid=a2355dc3cb713b34c80b9934307f1c56&amp;type=3#InspectorStyle" />
+    <engine:VisualElement data-source="project://database/Assets/Scripts/UI/States/InspectorStackState.asset?fileID=11400000&amp;guid=c0394e2018e29e3469735c7bf5a54c06&amp;type=2#InspectorStackState" style="flex-grow: 1;">
+        <engine:VisualElement class="inspectorBox">
+            <engine:Label tabindex="-1" text="Position &amp; Orientation" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            <engine:FloatField label="AP" value="0" name="APField" />
+            <engine:FloatField label="ML" value="0" name="MLField" />
+            <engine:FloatField label="DV" value="0" name="DVField" />
+            <engine:FloatField label="Depth" value="0" name="DepthField" />
+            <engine:VisualElement style="flex-grow: 0; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;" />
+            <engine:FloatField label="Yaw" value="0" name="YawField" />
+            <engine:FloatField label="Pitch" value="0" name="PitchField" />
+            <engine:FloatField label="Spin" value="0" name="SpinField" />
+        </engine:VisualElement>
+        <engine:VisualElement class="inspectorBox" style="flex-direction: column; flex-wrap: nowrap;">
+            <engine:Label tabindex="-1" text="Controls" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            <engine:VisualElement name="ControlsButtonGroup" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap;">
+                <engine:Button text="Lock" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LockButton" />
+                <engine:Button text="Duplicate" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DuplicateButton" />
+                <engine:Button text="Reset to Bregma" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResetToBregmaButton" />
+                <engine:Button text="Reset to Dura" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResetToDuraButton" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:VisualElement class="inspectorBox">
+            <engine:Label tabindex="-1" text="Color" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            <engine:VisualElement name="ProbeColorPicker" style="flex-grow: 1; flex-wrap: wrap; flex-direction: row;">
+                <engine:RadioButton name="1F77B4" />
+                <engine:RadioButton name="AEC7E8" />
+                <engine:RadioButton name="FF7F0E" />
+                <engine:RadioButton name="FFBB78" />
+                <engine:RadioButton name="2CA02C" />
+                <engine:RadioButton name="98DF8A" />
+                <engine:RadioButton name="D62728" />
+                <engine:RadioButton name="FF9896" />
+                <engine:RadioButton name="9467BD" />
+                <engine:RadioButton name="C5B0D5" />
+                <engine:RadioButton name="8C564B" />
+                <engine:RadioButton name="C49C94" />
+                <engine:RadioButton name="E377C2" />
+                <engine:RadioButton name="F7B6D2" />
+                <engine:RadioButton name="7F7F7F" />
+                <engine:RadioButton name="C7C7C7" />
+                <engine:RadioButton name="DBDB8D" />
+                <engine:RadioButton name="17BECF" />
+                <engine:RadioButton name="9EDAE5" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:VisualElement class="inspectorBox">
+            <engine:Label tabindex="-1" text="Assign to Experiment" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            <engine:DropdownField label="Experiment" name="ExperimentDropdown" choices="None" index="0" />
+        </engine:VisualElement>
+        <Bindings>
+            <engine:DataBinding property="enabledSelf" data-source-path="IsEnabled" binding-mode="ToTarget" />
+        </Bindings>
+    </engine:VisualElement>
+</engine:UXML>

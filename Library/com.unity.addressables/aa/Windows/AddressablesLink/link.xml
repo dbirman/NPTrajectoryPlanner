@@ -1,7 +1,7 @@
 <linker>
   <assembly fullname="pinpoint.scriptableobjects, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="ChannelMapData" preserve="all" />
-    <type fullname="ChannelMapData/BoolArray" preserve="nothing" serialized="true" />
+    <type fullname=".ChannelMapData/BoolArray" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="trajectoryplanner.craniotomy, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="CraniotomySkull" preserve="all" />
@@ -13,7 +13,6 @@
     <type fullname="UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider" preserve="all" />
     <type fullname="UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider" preserve="all" />
     <type fullname="UnityEngine.ResourceManagement.ResourceProviders.InstanceProvider" preserve="all" />
-    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.LegacyResourcesProvider" preserve="all" />
     <type fullname="UnityEngine.ResourceManagement.ResourceProviders.SceneProvider" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">

@@ -1,7 +1,10 @@
+using System.Collections;
 using System.IO;
 using System.Net;
+using Unity.EditorCoroutines.Editor;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace Editor
 {
@@ -25,18 +28,14 @@ namespace Editor
 
         private static void GetSchemas(string srcURL, string outFile)
         {
+            if (!Directory.Exists(outFile)) Directory.CreateDirectory(outFile);
 
-            if (!Directory.Exists(outFile))
+            var files = Directory.GetFiles(srcURL, "*.cs");
+
+            foreach (var file in files)
             {
-                Directory.CreateDirectory(outFile);
-            }
-
-            string[] files = Directory.GetFiles(srcURL, "*.cs");
-
-            foreach (string file in files)
-            {
-                string fileName = Path.GetFileName(file);
-                string destFilePath = Path.Combine(outFile, fileName);
+                var fileName = Path.GetFileName(file);
+                var destFilePath = Path.Combine(outFile, fileName);
                 File.Copy(file, destFilePath, true);
             }
 

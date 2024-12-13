@@ -1,0 +1,122 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Styles/InspectorStyle.uss?fileID=7433441132597879392&amp;guid=a2355dc3cb713b34c80b9934307f1c56&amp;type=3#InspectorStyle" />
+    <engine:Label text="Unsupported probe angle.&#10;Ensure pitch is &gt; 30°." style="color: rgb(179, 57, 57); -unity-font-style: bold; white-space: normal;">
+        <Bindings>
+            <engine:DataBinding property="style.display" data-source-path="PitchWarningDisplayStyle" binding-mode="ToTarget" data-source="project://database/Assets/Scripts/UI/States/AutomationStackState.asset?fileID=11400000&amp;guid=1f3a268d723c7fe4f90bd218f72aa27d&amp;type=2#AutomationStackState" />
+        </Bindings>
+    </engine:Label>
+    <engine:VisualElement data-source="project://database/Assets/Scripts/UI/States/AutomationStackState.asset?fileID=11400000&amp;guid=1f3a268d723c7fe4f90bd218f72aa27d&amp;type=2#AutomationStackState">
+        <engine:VisualElement enabled="true" class="inspectorBox">
+            <engine:Label tabindex="-1" text="Reference Coordinate&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            <engine:VisualElement style="flex-grow: 1; flex-direction: row;">
+                <engine:VisualElement style="flex-grow: 1;">
+                    <engine:Label text="X" style="-unity-text-align: upper-center;" />
+                    <engine:FloatField>
+                        <Bindings>
+                            <engine:DataBinding property="value" data-source-path="ReferenceCoordinateCalibrationX" binding-mode="ToTarget" />
+                        </Bindings>
+                    </engine:FloatField>
+                </engine:VisualElement>
+                <engine:VisualElement style="flex-grow: 1;">
+                    <engine:Label text="Y" style="-unity-text-align: upper-center;" />
+                    <engine:FloatField>
+                        <Bindings>
+                            <engine:DataBinding property="value" data-source-path="ReferenceCoordinateCalibrationY" binding-mode="TwoWay" />
+                        </Bindings>
+                    </engine:FloatField>
+                </engine:VisualElement>
+                <engine:VisualElement style="flex-grow: 1;">
+                    <engine:Label text="Z" style="-unity-text-align: upper-center;" />
+                    <engine:FloatField>
+                        <Bindings>
+                            <engine:DataBinding property="value" data-source-path="ReferenceCoordinateCalibrationZ" binding-mode="TwoWay" />
+                        </Bindings>
+                    </engine:FloatField>
+                </engine:VisualElement>
+                <engine:VisualElement style="flex-grow: 1;">
+                    <engine:Label text="Depth" style="-unity-text-align: upper-center;" />
+                    <engine:FloatField>
+                        <Bindings>
+                            <engine:DataBinding property="value" data-source-path="ReferenceCoordinateCalibrationDepth" binding-mode="TwoWay" />
+                        </Bindings>
+                    </engine:FloatField>
+                </engine:VisualElement>
+            </engine:VisualElement>
+            <engine:Button text="Reset Reference Coordinate" parse-escape-sequences="true" display-tooltip-when-elided="true" name="reset-reference-coordinate-button" />
+        </engine:VisualElement>
+        <engine:VisualElement class="inspectorBox">
+            <engine:Label text="Target Insertion" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            <engine:RadioButtonGroup value="0" name="target-insertion-radio-button-group" style="flex-wrap: wrap;">
+                <Bindings>
+                    <engine:DataBinding property="choices" data-source-path="TargetInsertionOptions" binding-mode="ToTarget" />
+                    <engine:DataBinding property="value" data-source-path="SelectedTargetInsertionIndex" binding-mode="TwoWay" />
+                    <engine:DataBinding property="enabledSelf" data-source-path="IsTargetInsertionRadioButtonGroupEnabled" binding-mode="ToTarget" />
+                </Bindings>
+            </engine:RadioButtonGroup>
+            <engine:Button text="Drive to Target Entry Coordinate" parse-escape-sequences="true" display-tooltip-when-elided="true" name="drive-to-target-entry-coordinate-button">
+                <Bindings>
+                    <engine:DataBinding property="enabledSelf" data-source-path="IsDriveToTargetEntryCoordinateButtonEnabled" binding-mode="ToTarget" />
+                    <engine:DataBinding property="text" data-source-path="DriveToTargetEntryCoordinateButtonText" binding-mode="ToTarget" />
+                </Bindings>
+            </engine:Button>
+        </engine:VisualElement>
+        <engine:VisualElement class="inspectorBox">
+            <engine:Label tabindex="-1" text="Dura Calibration" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            <engine:FloatField label="Offset (mm)">
+                <Bindings>
+                    <engine:DataBinding property="value" data-source-path="DuraCalibrationOffset" binding-mode="TwoWay" />
+                </Bindings>
+            </engine:FloatField>
+            <engine:Button text="Reset Dura Calibration" parse-escape-sequences="true" display-tooltip-when-elided="true" name="reset-dura-calibration-button" />
+        </engine:VisualElement>
+        <engine:VisualElement class="inspectorBox">
+            <engine:Label tabindex="-1" text="Insertion" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            <engine:RadioButtonGroup label="Speed (µm/s)" value="1" choices="2,5,10,Test (500),Custom">
+                <Bindings>
+                    <engine:DataBinding property="value" data-source-path="SelectedBaseSpeedIndex" binding-mode="TwoWay" />
+                    <engine:DataBinding property="enabledSelf" data-source-path="IsBaseSpeedRadioGroupEnabled" binding-mode="ToTarget" />
+                </Bindings>
+            </engine:RadioButtonGroup>
+            <engine:FloatField label="Custom Speed" value="20" readonly="false" style="visibility: visible; display: none;">
+                <Bindings>
+                    <engine:DataBinding property="style.display" data-source-path="CustomInsertionBaseSpeedDisplayStyle" binding-mode="ToTarget" />
+                    <engine:DataBinding property="value" data-source-path="CustomBaseSpeed" binding-mode="TwoWay" />
+                    <engine:DataBinding property="enabledSelf" data-source-path="IsCustomBaseSpeedEnabled" binding-mode="ToTarget" />
+                </Bindings>
+            </engine:FloatField>
+            <engine:FloatField label="Drive Past by (µm)" value="50" readonly="false">
+                <Bindings>
+                    <engine:DataBinding property="value" data-source-path="DrivePastTargetDistanceMicrometers" binding-mode="TwoWay" />
+                    <engine:DataBinding property="enabledSelf" data-source-path="IsDrivePastTargetDistanceEnabled" binding-mode="ToTarget" />
+                </Bindings>
+            </engine:FloatField>
+            <engine:Label text="ETA: ">
+                <Bindings>
+                    <engine:DataBinding property="text" data-source-path="ETA" binding-mode="ToTarget" />
+                </Bindings>
+            </engine:Label>
+            <engine:VisualElement style="flex-grow: 1; flex-direction: row;">
+                <engine:Button text="Drive" parse-escape-sequences="true" display-tooltip-when-elided="true" name="drive-to-target-insertion-button" style="flex-grow: 1;">
+                    <Bindings>
+                        <engine:DataBinding property="enabledSelf" data-source-path="IsDriveToTargetInsertionButtonEnabled" binding-mode="ToTarget" />
+                        <engine:DataBinding property="style.display" data-source-path="DriveToTargetInsertionButtonDisplayStyle" binding-mode="ToTarget" />
+                        <engine:DataBinding property="text" data-source-path="DriveToTargetInsertionButtonText" binding-mode="ToTarget" />
+                    </Bindings>
+                </engine:Button>
+                <engine:Button text="Stop" parse-escape-sequences="true" display-tooltip-when-elided="true" name="stop-button" style="flex-grow: 1;">
+                    <Bindings>
+                        <engine:DataBinding property="style.display" data-source-path="StopButtonDisplayStyle" binding-mode="ToTarget" />
+                    </Bindings>
+                </engine:Button>
+                <engine:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="exit-button" style="flex-grow: 1;">
+                    <Bindings>
+                        <engine:DataBinding property="style.display" data-source-path="ExitButtonDisplayStyle" binding-mode="ToTarget" />
+                    </Bindings>
+                </engine:Button>
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <Bindings>
+            <engine:DataBinding property="enabledSelf" data-source-path="IsEnabled" binding-mode="ToTarget" />
+        </Bindings>
+    </engine:VisualElement>
+</engine:UXML>

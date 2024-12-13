@@ -1,0 +1,20 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Styles/InspectorStyle.uss?fileID=7433441132597879392&amp;guid=a2355dc3cb713b34c80b9934307f1c56&amp;type=3#InspectorStyle" />
+    <engine:VisualElement data-source="project://database/Assets/Scripts/UI/States/ManualControlStackState.asset?fileID=11400000&amp;guid=7dbcc18622f05be439cc292c3f7999fa&amp;type=2#ManualControlStackState" class="inspectorBox" style="flex-grow: 1;">
+        <engine:Label text="Manual Control" />
+        <engine:Toggle label="Enable">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="IsControlEnabled" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:Toggle>
+        <engine:Button text="Return to Reference Coordinate" name="return-to-reference-coordinate-button">
+            <Bindings>
+                <engine:DataBinding property="text" data-source-path="ReturnToReferenceCoordinatesButtonText" binding-mode="ToTarget" />
+                <engine:DataBinding property="style.display" data-source-path="ReturnToReferenceCoordinatesButtonDisplayStyle" binding-mode="ToTarget" />
+            </Bindings>
+        </engine:Button>
+        <Bindings>
+            <engine:DataBinding property="enabledSelf" data-source-path="IsPanelEnabled" binding-mode="ToTarget" />
+        </Bindings>
+    </engine:VisualElement>
+</engine:UXML>

@@ -476,22 +476,25 @@ public class CartesianProbeController : ProbeController
     /// </summary>
     /// <param name="direction"></param>
     /// <param name="speed"></param>
-    private void MoveProbe_XYZD(Vector4 direction, float speed)
+    private async void MoveProbe_XYZD(Vector4 direction, float speed)
     {
-        // Get the positional delta
+        // Get the positional delta.
         var posDelta = Vector4.Scale(direction * speed,UnlockedDir);
 
         if (ManipulatorManualControl)
         {
-            // Cancel if a movement is in progress
+            // Cancel if a movement is in progress.
             if (ManipulatorKeyboardMoveInProgress) return;
             
-            // Disable/ignore more input until movement is done
+            // Disable/ignore more input until movement is done.
             ManipulatorKeyboardMoveInProgress = true;
 
-            // Call movement and re-enable input when done
-            ProbeManager.ManipulatorBehaviorController.MoveByWorldSpaceDelta(posDelta,
-                _ => ManipulatorKeyboardMoveInProgress = false, Debug.LogError);
+            // Call movement and re-enable input when done.
+            if (!await ProbeManager.ManipulatorBehaviorController.MoveByWorldSpaceDelta(posDelta))
+                return;
+            
+            // Re-enable input.
+            ManipulatorKeyboardMoveInProgress = false;
         }
         else
         {

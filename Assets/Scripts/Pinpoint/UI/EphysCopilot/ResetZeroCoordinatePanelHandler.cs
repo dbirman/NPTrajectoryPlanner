@@ -30,7 +30,7 @@ namespace Pinpoint.UI.EphysCopilot
                 ProbeManager.ManipulatorBehaviorController.ManipulatorID,
                 zeroCoordinate =>
                 {
-                    ProbeManager.ManipulatorBehaviorController.ZeroCoordinateOffset =
+                    ProbeManager.ManipulatorBehaviorController.ReferenceCoordinateOffset =
                         zeroCoordinate;
                     ProbeManager.ManipulatorBehaviorController.BrainSurfaceOffset = 0;
                 }
@@ -44,7 +44,7 @@ namespace Pinpoint.UI.EphysCopilot
                     DateTime.Now.ToString(CultureInfo.InvariantCulture),
                     "ResetZeroCoordinate",
                     ProbeManager.ManipulatorBehaviorController.ManipulatorID,
-                    ProbeManager.ManipulatorBehaviorController.ZeroCoordinateOffset.ToString()
+                    ProbeManager.ManipulatorBehaviorController.ReferenceCoordinateOffset.ToString()
                 }
             );
         }

@@ -7,7 +7,8 @@
         "vbl.brainatlas.runtime",
         "vbl.brainatlas.atlas",
         "vbl.brainatlas.coordsystems",
-        "vblcore.coordinates"
+        "vblcore.coordinates",
+        "trajectoryplanner.log"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BrainAtlas;
 using EphysLink;
 using Pinpoint.Probes;
+using Pinpoint.Probes.ManipulatorBehaviorController;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -229,7 +230,7 @@ public class ProbeManager : MonoBehaviour
     /// When true, this Probe will be saved and re-loaded in the scene the next time Pinpoint loads
     /// </summary>
     public bool Saved { get; set; }
-
+    
     #endregion
 
     #region Unity
@@ -904,10 +905,11 @@ public class ProbeManager : MonoBehaviour
         }
     }
 
+    // TODO: Remove useDV and always use depth.
     /// <summary>
     /// Calculate the entry coordinate on the brain surface, returns coordIdx
     /// </summary>
-    /// <param name="useDV"></param>
+    /// <param name="useDV">Whether the surface should be found along the DV axis or depth axis.</param>
     /// <returns>(entryCoordAtlasIdx, probeInBrain)</returns>
     public (Vector3 entryCoordAtlasIdx, bool probeInBrain) CalculateEntryCoordinate(
         bool useDV = false
@@ -1271,12 +1273,12 @@ public struct ProbeManagerData
 
         data.NumAxes = probeManager.ManipulatorBehaviorController.NumAxes;
         data.ManipulatorID = probeManager.ManipulatorBehaviorController.ManipulatorID;
-        data.ZeroCoordOffset = probeManager.ManipulatorBehaviorController.ZeroCoordinateOffset;
+        data.ZeroCoordOffset = probeManager.ManipulatorBehaviorController.ReferenceCoordinateOffset;
         data.Dimensions = probeManager.ManipulatorBehaviorController.Dimensions;
         data.BrainSurfaceOffset = probeManager.ManipulatorBehaviorController.BrainSurfaceOffset;
-        data.Drop2SurfaceWithDepth = probeManager
-            .ManipulatorBehaviorController
-            .IsSetToDropToSurfaceWithDepth;
+        // data.Drop2SurfaceWithDepth = probeManager
+        //     .ManipulatorBehaviorController
+        //     .IsSetToDropToSurfaceWithDepth;
         data.IsRightHanded = probeManager.ManipulatorBehaviorController.IsRightHanded;
 
         return data;

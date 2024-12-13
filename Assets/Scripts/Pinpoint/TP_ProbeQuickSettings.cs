@@ -149,7 +149,7 @@ namespace TrajectoryPlanner
             if (ProbeManager.ActiveProbeManager.IsEphysLinkControlled)
             {
                 _communicationManager.GetPosition(ProbeManager.ActiveProbeManager.ManipulatorBehaviorController.ManipulatorID,
-                    zeroCoordinate => ProbeManager.ActiveProbeManager.ManipulatorBehaviorController.ZeroCoordinateOffset = zeroCoordinate);
+                    zeroCoordinate => ProbeManager.ActiveProbeManager.ManipulatorBehaviorController.ReferenceCoordinateOffset = zeroCoordinate);
                 ProbeManager.ActiveProbeManager.ManipulatorBehaviorController.BrainSurfaceOffset = 0;
             }
             else

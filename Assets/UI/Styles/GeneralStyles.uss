@@ -1,0 +1,55 @@
+.sidePanel {
+    background-color: rgb(132, 129, 122);
+}
+
+Button {
+    background-color: rgb(209, 204, 192);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+}
+
+DropdownField > VisualElement {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: rgb(209, 204, 192);
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+}
+
+.unity-tab__header {
+    background-color: rgb(209, 204, 192);
+    padding-top: 6px;
+    padding-bottom: 7px;
+}
+
+.unity-base-text-field__input {
+    background-color: rgb(247, 241, 227);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.unity-radio-button__checkmark-background {
+    background-color: rgb(247, 241, 227);
+    padding-top: 0;
+    justify-content: center;
+    align-self: center;
+}
+
+.unity-scroll-view--vertical > #unity-content-and-vertical-scroll-container > #unity-content-viewport {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 10px;
+}

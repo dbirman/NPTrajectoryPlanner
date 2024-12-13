@@ -125,7 +125,7 @@ public struct SetInsideBrainRequest
     }
 }
 
-;
+
 [Serializable]
 public struct SetPositionRequest
 {

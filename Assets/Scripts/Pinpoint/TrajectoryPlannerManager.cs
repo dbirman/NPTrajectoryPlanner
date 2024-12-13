@@ -486,10 +486,10 @@ namespace TrajectoryPlanner
             
             // Repopulate Ephys Link information
             probeManager.ManipulatorBehaviorController.NumAxes = numAxes;
-            probeManager.ManipulatorBehaviorController.ZeroCoordinateOffset = zeroCoordinateOffset;
+            probeManager.ManipulatorBehaviorController.ReferenceCoordinateOffset = zeroCoordinateOffset;
             probeManager.ManipulatorBehaviorController.BrainSurfaceOffset = brainSurfaceOffset;
-            probeManager.ManipulatorBehaviorController.IsSetToDropToSurfaceWithDepth = dropToSurfaceWithDepth;
-            probeManager.ManipulatorBehaviorController.IsSetToDropToSurfaceWithDepth = dropToSurfaceWithDepth;
+            // probeManager.ManipulatorBehaviorController.IsSetToDropToSurfaceWithDepth = dropToSurfaceWithDepth;
+            // probeManager.ManipulatorBehaviorController.IsSetToDropToSurfaceWithDepth = dropToSurfaceWithDepth;
             probeManager.ManipulatorBehaviorController.IsRightHanded = isRightHanded;
             var communicationManager = GameObject.Find("EphysLink").GetComponent<CommunicationManager>();
                 

@@ -2,7 +2,14 @@
     "name": "pinpoint.ui",
     "rootNamespace": "",
     "references": [
-        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:21a4085d3239a49479f839eb9996372e",
+        "GUID:7e45fd9ef3568e944946569af99430de",
+        "GUID:baba835d3f6de1948879ba12c4c45295",
+        "GUID:0e68f56b71507ea46a7a7e86308f8eef",
+        "GUID:bcfae4c7cb9968e45808db945035df54",
+        "GUID:160da71e82fca504abe6ab7833979cdb",
+        "GUID:eff99741200a0ca47a1364af79d8741c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

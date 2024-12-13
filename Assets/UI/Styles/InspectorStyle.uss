@@ -1,0 +1,116 @@
+.inspectorBox {
+    background-color: rgb(200, 200, 200);
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+#ProbeColorPicker > RadioButton {
+    width: 50px;
+    height: 50px;
+}
+
+#ProbeColorPicker > RadioButton > VisualElement > VisualElement {
+    width: 50px;
+    height: 50px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+#ProbeColorPicker > RadioButton #unity-checkmark {
+    width: 50%;
+    height: 50%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+#1F77B4 > VisualElement > VisualElement {
+    background-color: rgb(31, 119, 180);
+}
+
+#AEC7E8 > VisualElement > VisualElement {
+    background-color: rgb(174, 199, 232);
+}
+
+#FF7F0E > VisualElement > VisualElement {
+    background-color: rgb(255, 127, 14);
+}
+
+#FFBB78 > VisualElement > VisualElement {
+    background-color: rgb(255, 187, 120);
+}
+
+#2CA02C > VisualElement > VisualElement {
+    background-color: rgb(44, 160, 44);
+}
+
+#98DF8A > VisualElement > VisualElement {
+    background-color: rgb(152, 223, 138);
+}
+
+#D62728 > VisualElement > VisualElement {
+    background-color: rgb(214, 39, 40);
+}
+
+#FF9896 > VisualElement > VisualElement {
+    background-color: rgb(255, 152, 150);
+}
+
+#9467BD > VisualElement > VisualElement {
+    background-color: rgb(148, 103, 189);
+}
+
+#C5B0D5 > VisualElement > VisualElement {
+    background-color: rgb(197, 176, 213);
+}
+
+#8C564B > VisualElement > VisualElement {
+    background-color: rgb(140, 86, 75);
+}
+
+#C49C94 > VisualElement > VisualElement {
+    background-color: rgb(196, 156, 148);
+}
+
+#E377C2 > VisualElement > VisualElement {
+    background-color: rgb(227, 119, 194);
+}
+
+#F7B6D2 > VisualElement > VisualElement {
+    background-color: rgb(247, 182, 210);
+}
+
+#7F7F7F > VisualElement > VisualElement {
+    background-color: rgb(127, 127, 127);
+}
+
+#C7C7C7 > VisualElement > VisualElement {
+    background-color: rgb(199, 199, 199);
+}
+
+#DBDB8D > VisualElement > VisualElement {
+    background-color: rgb(219, 219, 141);
+}
+
+#17BECF > VisualElement > VisualElement {
+    background-color: rgb(23, 190, 207);
+}
+
+#9EDAE5 > VisualElement > VisualElement {
+    background-color: rgb(158, 218, 229);
+}
+
+#ControlsButtonGroup > Button {
+    flex-grow: 1;
+}
+
+.unity-radio-button-group > .unity-base-field__input > #unity-radio-button-group__container > .unity-radio-button > .unity-radio-button__input > .unity-radio-button__text {
+    white-space: pre-wrap;
+}

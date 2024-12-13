@@ -250,7 +250,7 @@ namespace Pinpoint.UI.EphysLinkSettings
         /// <param name="newValue">New offset X-axis value</param>
         public void UpdateZeroCoordinateOffsetX(string newValue)
         {
-            _attachedProbe.ManipulatorBehaviorController.ZeroCoordinateOffset = new Vector4(
+            _attachedProbe.ManipulatorBehaviorController.ReferenceCoordinateOffset = new Vector4(
                 float.Parse(newValue),
                 float.NaN,
                 float.NaN,
@@ -264,7 +264,7 @@ namespace Pinpoint.UI.EphysLinkSettings
         /// <param name="newValue">New offset Y-axis value</param>
         public void UpdateZeroCoordinateOffsetY(string newValue)
         {
-            _attachedProbe.ManipulatorBehaviorController.ZeroCoordinateOffset = new Vector4(
+            _attachedProbe.ManipulatorBehaviorController.ReferenceCoordinateOffset = new Vector4(
                 float.NaN,
                 float.Parse(newValue),
                 float.NaN,
@@ -278,7 +278,7 @@ namespace Pinpoint.UI.EphysLinkSettings
         /// <param name="newValue">New offset Z-axis value</param>
         public void UpdateZeroCoordinateOffsetZ(string newValue)
         {
-            _attachedProbe.ManipulatorBehaviorController.ZeroCoordinateOffset = new Vector4(
+            _attachedProbe.ManipulatorBehaviorController.ReferenceCoordinateOffset = new Vector4(
                 float.NaN,
                 float.NaN,
                 float.Parse(newValue),
@@ -292,7 +292,7 @@ namespace Pinpoint.UI.EphysLinkSettings
         /// <param name="newValue">New offset D-axis value</param>
         public void UpdateZeroCoordinateOffsetD(string newValue)
         {
-            _attachedProbe.ManipulatorBehaviorController.ZeroCoordinateOffset = new Vector4(
+            _attachedProbe.ManipulatorBehaviorController.ReferenceCoordinateOffset = new Vector4(
                 float.NaN,
                 float.NaN,
                 float.NaN,
@@ -303,9 +303,9 @@ namespace Pinpoint.UI.EphysLinkSettings
         public void UpdateDuraDropDirection(int value)
         {
             // Set drop direction on attached probe if it exists
-            if (_attachedProbe)
-                _attachedProbe.ManipulatorBehaviorController.IsSetToDropToSurfaceWithDepth =
-                    value == 1;
+            // if (_attachedProbe)
+            //     _attachedProbe.ManipulatorBehaviorController.IsSetToDropToSurfaceWithDepth =
+            //         value == 1;
         }
 
         private void SetDuraDropInteractable(bool interactable)
@@ -349,7 +349,7 @@ namespace Pinpoint.UI.EphysLinkSettings
         /// <summary>
         ///     Return manipulator back to zero coordinate
         /// </summary>
-        public void ReturnToZeroCoordinate()
+        public async void ReturnToZeroCoordinate()
         {
             // Disable keyboard control
             _attachedProbe.ProbeController.ManipulatorManualControl = false;
@@ -359,27 +359,16 @@ namespace Pinpoint.UI.EphysLinkSettings
             _stopReturningToZeroCoordinateButtonGameObject.SetActive(true);
 
             // Move manipulator back to zero coordinate
-            _attachedProbe.ManipulatorBehaviorController.MoveBackToZeroCoordinate(
-                _ =>
-                {
-                    PostMoveAction();
+            if (await _attachedProbe.ManipulatorBehaviorController.MoveBackToReferenceCoordinate())
+                // Reset dura drop direction on successful return.
+                _attachedProbe.ManipulatorBehaviorController.BrainSurfaceOffset = 0;
+            
+            // Show move button and hide stop button
+            _returnToZeroCoordinateButtonGameObject.SetActive(true);
+            _stopReturningToZeroCoordinateButtonGameObject.SetActive(false);
 
-                    // Reset dura drop direction on successful return
-                    _attachedProbe.ManipulatorBehaviorController.BrainSurfaceOffset = 0;
-                },
-                _ => PostMoveAction()
-            );
-            return;
-
-            void PostMoveAction()
-            {
-                // Show move button and hide stop button
-                _returnToZeroCoordinateButtonGameObject.SetActive(true);
-                _stopReturningToZeroCoordinateButtonGameObject.SetActive(false);
-
-                // Re-enable keyboard control
-                _attachedProbe.ProbeController.ManipulatorManualControl = true;
-            }
+            // Re-enable keyboard control
+            _attachedProbe.ProbeController.ManipulatorManualControl = true;
         }
 
         public void StopReturningToZeroCoordinate()
@@ -413,7 +402,7 @@ namespace Pinpoint.UI.EphysLinkSettings
             {
                 _probePropertiesSection.SetActive(true);
                 UpdateZeroCoordinateOffsetInputFields(
-                    _attachedProbe.ManipulatorBehaviorController.ZeroCoordinateOffset
+                    _attachedProbe.ManipulatorBehaviorController.ReferenceCoordinateOffset
                 );
                 UpdateBrainSurfaceOffsetInputField(
                     _attachedProbe.ManipulatorBehaviorController.BrainSurfaceOffset
