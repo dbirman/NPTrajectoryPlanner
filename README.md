@@ -10,4 +10,4 @@ Pinpoint is a tool for planning trajectories in the space of brain reference atl
 
 # Citing
 
-A preprint describing Pinpoint has been published on [bioRxiv](https://www.biorxiv.org/content/10.1101/2023.07.14.548952). The paper provides an introduction to the key features and should be used as a citation if Pinpoint proves integral to a scientific publication.
+A preprint describing Pinpoint has been reviewed in [eLife](https://elifesciences.org/reviewed-preprints/91662v1). The paper provides an introduction to the key features and should be used as a citation if Pinpoint proves integral to a scientific publication.
