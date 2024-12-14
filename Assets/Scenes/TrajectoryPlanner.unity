@@ -2808,20 +2808,26 @@ MonoBehaviour:
   - allen_mouse_50um
   - allen_mouse_100um
   - princeton_mouse_20um
+  - allen_mouse_bluebrain_barrels_25um
   - whs_sd_rat_39um
   - whs_sd_rat_78um
   - allen_human_500um
   - azba_zfish_8um
+  - sju_cavefish_2um
+  - prairie_vole_25um
   _atlasMappings:
   - Mouse CCF (25um)
   - Mouse CCF (50um)
   - Mouse CCF (100um)
   - Mouse Princeton (20um)
+  - Mouse CCF with Barrels (25um)
   - Rat Waxholm (39um)
   - Rat Waxholm (78um)
   - Human (500um)
   - Zebrafish (8um)
-  _allowedOnWebGL: 0101010100010101
+  - Cavefish (2um)
+  - Prairie Vole (25um)
+  _allowedOnWebGL: 0101010100010101010101
   _transformDropdown: {fileID: 611159662}
 --- !u!114 &2108153969 stripped
 MonoBehaviour:
